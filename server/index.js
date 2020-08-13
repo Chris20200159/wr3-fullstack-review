@@ -5,7 +5,7 @@ const massive = require('massive');
 const app = express();
 
 const {CONNECTION_STRING, SESSION_SECRET, SERVER_PORT} = process.env;
-const auth = require('./controllers/authController');
+const auth = require('./authController');
 
 app.use(express.json());
 app.use(session({
