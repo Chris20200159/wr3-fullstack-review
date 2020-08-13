@@ -46,15 +46,42 @@ comments
 CREATE TABLE comments (
   comment_id SERIAL PRIMARY KEY,
   body TEXT
-  comment_karma_score TEXT,
+  comment_karma_score INT,
   post_id INT REFERENCES post(post_id),
   user_id INT REFERENCES users(user_id)
 );
 ```
 #### SERVER
 -Dependencies:
+  -express - RESTful API
+  -massive
+  -dotenv
+  -bcrypt
+  -express-session
+
 -File Structure:
+  -Index.js
+  -AuthController.js
+  -PostController.js
 
 ### Front-end
 -Dependencies:
+  -axios
+  -redux
+  -react-redux
+  -redux-promise-middleware
+  -react-router-dom
 
+-File Structure:
+  -src/
+  -App.js
+  -App.css
+  -reset.css
+  -redux
+    -store.js
+    -reducer.js
+-components/
+  -Header.js
+  -Login.js
+  -Profile.js
+  -FrontPage.js      
