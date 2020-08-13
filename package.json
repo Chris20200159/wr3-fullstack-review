@@ -2,7 +2,7 @@
   "name": "wr3-fullstack-review",
   "version": "0.1.0",
   "private": true,
-  "main": "server/",
+  "main": "server/index.js",
   "proxy": "http://localhost:4001",
   "nodemonConfig": {
     "ignore": ["src/"]
