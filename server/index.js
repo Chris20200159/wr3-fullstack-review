@@ -5,6 +5,7 @@ const massive = require('massive');
 const app = express();
 
 const {CONNECTION_STRING, SESSION_SECRET, SERVER_PORT} = process.env;
+const auth = require('./authController');
 
 app.use(express.json());
 app.use(session({
@@ -25,10 +26,10 @@ massive({
 }).catch(err => console.log(err))
 
 // endpoints
-// app.post('/auth/login')
-// app.post('/auth/register')
-// app.delete('/auth/logout')
-// app.get('/auth/user')
+app.post('/auth/login', auth.login)
+app.post('/auth/register', auth.register)
+app.delete('/auth/logout', auth.logout)
+app.get('/auth/user', auth.user)
 
 
 app.listen(SERVER_PORT, ()=> console.log(`Connected to port ${SERVER_PORT}`))
